@@ -1,4 +1,4 @@
-<h1>Welcome to <img src="images/Ai-HDl_Logo.png.webp" alt="AI-HDL Logo" style="width: 50%;"></h1> 
+<h1>Welcome to <img src="images/Ai-HDl_Logo.png.webp" alt="AI-HDL Logo" width="50%"></h1> 
 
 In this folder you will find the following source files required to build the first iteration of your digital watch. However,
 these files will only contain the required inputs and outputs of the modules. It is up to you to create them by prompting
