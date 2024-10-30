@@ -12,7 +12,7 @@ your language model of choice. Below are explanations of each module to help you
 <li><b>stopwatch.v</b>: Implements the stopwatch logic, handling start/stop and reset functionality.</li>
 </ul>
 It will also include 1 simulation source that can be used to test the output of your code:
-<br>
+<br></br>
 <ul>
 <li><b>top_level_tb.v</b>: A testbench that simulates the top_level module, allowing you to test the full stopwatch functionality in Vivado.</li>
 </ul>
