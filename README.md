@@ -1,4 +1,4 @@
-<img src="images/Ai-HDl_Logo.png.webp" alt="AI-HDL Logo">
+<img src="images/Ai-HDl_Logo.png.webp" alt="AI-HDL Logo" style="float: middle;">
 <h1>Welcome to AI-HDL!</h1> 
 
 In this folder you will find the following source files required to build the first iteration of your digital watch. However,
