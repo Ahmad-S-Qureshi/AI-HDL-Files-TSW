@@ -1,4 +1,4 @@
-<h1>Welcome to <img src="images/Ai-HDl_Logo.png" alt="AI-HDL Logo" width="20%"></h1> 
+<h1>Welcome to <a src="csm.arizona.edu/AIHDL"><img src="images/Ai-HDl_Logo.png" alt="AI-HDL Logo" width="20%"></a></h1> 
 
 In this folder you will find the following source files required to build the first iteration of your digital watch. However,
 these files will only contain the required inputs and outputs of the modules. It is up to you to create them by prompting
