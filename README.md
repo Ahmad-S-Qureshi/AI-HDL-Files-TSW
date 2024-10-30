@@ -22,4 +22,4 @@ behavioral simulation. This will tell you whether or not the modules are functio
 
 <h2>Download</h2>
 In order to download the files, on the main AI-HDL repository page select the <b>Code</b> button and select <b>Download ZIP</b>. Once the file has downloaded, extract the files from the ZIP folder. These files are now ready to be added as source files to the Vivado directory.
-
+<img src="images/download.png" alt="AI-HDL Logo" width="50%">
