@@ -17,5 +17,9 @@ It will also include 1 simulation source that can be used to test the output of 
 <li><b>top_level_tb.v</b>: A testbench that simulates the top_level module, allowing you to test the full stopwatch functionality in Vivado.</li>
 </ul>
 
-Once all files have been generated and debugged, press the "<b>Run Simulation</b>" button on Vivado to generate the waveform for the 
+Once all files have been generated and debugged, press the <b>Run Simulation</b> button on Vivado to generate the waveform for the 
 behavioral simulation. This will tell you whether or not the modules are functioning properly.
+
+<h2>Download</h2>
+In order to download the files, on the main AI-HDL repository page select the <b>Code</b> button and select <b>Download ZIP</b>. Once the file has downloaded, extract the files from the ZIP folder.
+
