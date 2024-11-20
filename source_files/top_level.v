@@ -1,11 +1,11 @@
 // Top-Level Design for Basys 3 Board
-// Includes button debouncers, clock divider, seven-segment display, and a placeholder for a stopwatch module.
+// Includes button debouncers, clock divider, seven-segment display, and stopwatch module.
 
 module top_level (
     input wire clk,               // 100 MHz clock input
     input wire reset,             // Reset input
-    input wire button0,           // Button 0 input
-    input wire button1,           // Button 1 input
+    input wire button0,           // Button 0 input (Start/Stop)
+    input wire button1,           // Button 1 input (Reset)
     output wire [3:0] anodes,     // Seven-segment display anodes (active low)
     output wire [6:0] cathodes    // Seven-segment display cathodes (active low)
 );
@@ -14,10 +14,10 @@ module top_level (
     wire slow_clk;
 
     // Debounced Button Outputs
-    wire button0_debounced;
-    wire button1_debounced;
+    wire button_start_stop_debounced;
+    wire button_reset_debounced;
 
-    // Placeholder Signals for Stopwatch Module
+    // Stopwatch Output (16-bit BCD for 4 digits)
     wire [15:0] stopwatch_output;
 
     // Instantiate Clock Divider
@@ -32,34 +32,38 @@ module top_level (
     // Instantiate Button Debouncers
     button_debouncer #(
         .DEBOUNCE_DELAY(20000) // 10 ms debounce at 2 kHz clock
-    ) button0_debounce_inst (
+    ) button_start_stop_debounce_inst (
         .clk(slow_clk),
         .reset(reset),
         .button_in(button0),
-        .button_out(button0_debounced)
+        .button_out(button_start_stop_debounced)
     );
 
     button_debouncer #(
         .DEBOUNCE_DELAY(20000) // 10 ms debounce at 2 kHz clock
-    ) button1_debounce_inst (
+    ) button_reset_debounce_inst (
         .clk(slow_clk),
         .reset(reset),
         .button_in(button1),
-        .button_out(button1_debounced)
+        .button_out(button_reset_debounced)
+    );
+
+    // Instantiate Stopwatch Module
+    stopwatch stopwatch_inst (
+        .clk(slow_clk),
+        .reset(reset),
+        .button_start_stop(button_start_stop_debounced),
+        .button_reset(button_reset_debounced),
+        .time_data(stopwatch_output)
     );
 
     // Instantiate Seven-Segment Display Module
     seven_segment_display seven_seg_inst (
         .clk(slow_clk),
         .reset(reset),
-        .digit_data(stopwatch_output), // Placeholder for stopwatch output
+        .digit_data(stopwatch_output), // Pass the stopwatch output
         .anodes(anodes),
         .cathodes(cathodes)
     );
-
-    // Placeholder for Stopwatch Module
-    // Replace this with actual stopwatch module instantiation in the future.
-    // Example: stopwatch_module stopwatch_inst (...);
-    assign stopwatch_output = 16'h1234; // Temporary static value for testing
 
 endmodule
